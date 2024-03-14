@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="windows\IntroduOrase.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="windows\IntroduTari.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="windows\ListaOraseLocuitori.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="windows\ListaOraselor.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="windows\ListaTaraCuOrase.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="windows\ListaTariContinent.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="windows\ListaTarilor.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="windows\IntroduOrase.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="windows\IntroduTari.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="windows\ListaOraseLocuitori.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="windows\ListaOraselor.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="windows\ListaTaraCuOrase.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="windows\ListaTariContinent.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="windows\ListaTarilor.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

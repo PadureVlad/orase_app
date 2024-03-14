@@ -1,0 +1,108 @@
+﻿<Window x:Class="Problema01.windows.ListaTariContinent"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Problema01.windows"
+        mc:Ignorable="d"
+        Title="Lista Țări După Continent" Height="450" Width="500"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
+    <Window.Resources>
+        <Style x:Key="tbStyle">
+            <Style.Setters>
+                <Setter Property="Control.FontFamily" Value="Product Sans"/>
+                <Setter Property="Control.FontSize" Value="26"/>
+                <Setter Property="Control.HorizontalAlignment" Value="Center"/>
+                <Setter Property="Control.VerticalAlignment" Value="Center"/>
+                <Setter Property="Control.Margin" Value="10 15"/>
+                <Setter Property="Control.Foreground" Value="DarkSlateBlue"/>
+            </Style.Setters>
+        </Style>
+        <Style TargetType="StackPanel">
+            <Style.Setters>
+                <Setter Property="Control.Background" Value="WhiteSmoke"/>
+            </Style.Setters>
+        </Style>
+
+        <Style TargetType="ListView">
+            <Setter Property="Background" Value="NavajoWhite"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="0 10 0 5"/>
+        </Style>
+        <Style TargetType="ComboBox">
+            <Style.Setters>
+                <Setter Property="FontFamily" Value="Product Sans"/>
+                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="Height" Value="30"/>
+                <Setter Property="Margin" Value="20 0"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+            </Style.Setters>
+        </Style>
+        <Style TargetType="Button">
+            <Style.Setters>
+                <Setter Property="FontFamily" Value="Product Sans"/>
+                <Setter Property="Background" Value="LightBlue"/>
+                <Setter Property="Foreground" Value="Blue"/>
+                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="Margin" Value="5"/>
+                <Setter Property="Cursor" Value="Hand"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border CornerRadius="10"
+                            Background="{TemplateBinding Background}">
+                                <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"
+                                          Margin="{TemplateBinding Margin}"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style.Setters>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="LightCoral"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="6*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0">
+            <TextBlock Text="Lista Țărilor după Continent:"
+               Style="{StaticResource tbStyle}"/>
+        </StackPanel>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <ComboBox x:Name="cbContinent"
+                      Grid.Column="0"/>
+            <Button x:Name="btnDetermina"
+                    Content="Determină"
+                    Grid.Column="1"
+                    Click="btnDetermina_Click"/>
+        </Grid>
+
+        <ListView Grid.Row="2"
+          x:Name="lvTari">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Denumire" Width="240" DisplayMemberBinding="{Binding Denumire}"/>
+                    <GridViewColumn Header="Continent" Width="240" DisplayMemberBinding="{Binding Continent}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>
